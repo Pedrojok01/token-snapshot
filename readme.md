@@ -1,6 +1,6 @@
 <div align="center">
 <h1><strong> Token Snapshot </strong></h1>
-<h2>Create ERC20 Token Snapshot on any EVM chains!</h2>
+<h2>Create ERC20 Token Snapshots on any EVM chains!</h2>
 
 [![Stargazers](https://img.shields.io/github/stars/Pedrojok01/token-snapshot)](https://github.com/Pedrojok01/token-snapshot/stargazers)
 [![Issues](https://img.shields.io/github/issues/Pedrojok01/token-snapshot)](https://github.com/Pedrojok01/token-snapshot/issues)
