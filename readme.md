@@ -1,4 +1,14 @@
-# Token Snapshot: Create ERC20 Token Snapshot
+<div align="center">
+<h1><strong> Token Snapshot </strong></h1>
+<h2>Create ERC20 Token Snapshot on any EVM chains!</h2>
+
+[![Stargazers](https://img.shields.io/github/stars/Pedrojok01/token-snapshot)](https://github.com/Pedrojok01/token-snapshot/stargazers)
+[![Issues](https://img.shields.io/github/issues/Pedrojok01/token-snapshot)](https://github.com/Pedrojok01/token-snapshot/issues)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+<br></br>
+
+</div>
 
 This command-line utility creates a snapshot of any ERC20 token in JSON or CSV format. Use your own fully synced Ethereum node or any _Ethereum node as a service_ like Infura.
 
