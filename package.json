@@ -1,17 +1,34 @@
 {
-  "name": "fetch_event",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "name": "token-snapshot",
+  "version": "2.0.0",
+  "description": "ERC20 Token Snapshot, compatible with all EVM chains.",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix \"**/*.{js,jsx}\"",
     "prettier": "prettier --config .prettierrc \"**/*.{js,jsx}\" --write"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bin": {
+    "snapshot": "index.js"
+  },
+  "keywords": [
+    "ethereum",
+    "EVM networks",
+    "erc20",
+    "token",
+    "snapshot"
+  ],
+  "author": "Binod Nirvan",
+  "contributors": [
+    "@Pedrojok01"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Pedrojok01/@token-snapshot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pedrojok01/@token-snapshot"
+  },
   "dependencies": {
     "bignumber.js": "^9.1.1",
     "csv-writer": "^1.6.0",

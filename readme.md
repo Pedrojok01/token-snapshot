@@ -6,10 +6,19 @@ This command-line utility creates a snapshot of any ERC20 token in JSON or CSV f
 - Automatically resumes the next time upon failure.
 - Tested to work with Infura.
 
+## Important Notes
+
+This package is based on the little outdated <b>erc20-snapshot</b> package. Here is the list of the main modifications compared to the initial package:
+
+- Upgraded all dependencies to their latest version;
+- Switched from <b>[web3](https://docs.web3js.org/)</b> to <b>[ethers](https://docs.ethers.org/v5/)</b>;
+- Switched to ES6 modules;
+- Added <b>prettier</b> in addition to <b>eslint</b>;
+
 ## Getting Started
 
 ```
-npm install erc20-snapshot -g
+npm install token-snapshot -g
 ```
 
 ### CLI Arguments
@@ -27,11 +36,7 @@ cd path/to/a/directory
 Run the program:
 
 ```
-erc20-snapshot
-```
-or, in case of error:
-```
-node index.js
+snapshot
 ```
 
 ## Configuration File / Prompt Parameters
@@ -65,6 +70,10 @@ The block height to scan from. To save time, enter the block number of the trans
 
 The block height to end the scan at.
 
+### format
+
+The format of the output file(s), either `CSV` or `JSON`. `both` is selected by default.
+
 ### blocksPerBatch
 
 The number of blocks to query per batch.
@@ -79,10 +88,10 @@ The delay (in ms) between each request in the loop. Tweak this if you are experi
 
 Checks each address to determine whether it is a smart contract or an Ethereum wallet.
 
-## You May Also Like
+## Result
 
-- [Vyper ERC20 Contracts](https://github.com/binodnp/vyper-erc20)
-- [Vyper Crowdsale Contracts](https://github.com/binodnp/vyper-crowdsale)
-- [Solidoc: Solidity Documentation Generator](https://github.com/CYBRToken/solidoc)
-- [SolFlattener: Solidity Flattener](https://github.com/CYBRToken/sol-flattener)
-- [Vesting Schedule](https://github.com/binodnp/vesting-schedule)
+You will get your snapshot files in the newly created `result/balances` folder. You can also check the detail of each block in which a tx was found in `result/tx/{token Symbol}`
+
+## Aknowlegements
+
+> Binod Nirvan ([@binodp](https://github.com/binodnp)):<br> > https://github.com/binodnp/erc20-snapshot
