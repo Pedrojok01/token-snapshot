@@ -1,0 +1,30 @@
+{
+  "name": "fetch_event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix \"**/*.{js,jsx}\"",
+    "prettier": "prettier --config .prettierrc \"**/*.{js,jsx}\" --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^9.1.1",
+    "csv-writer": "^1.6.0",
+    "ethers": "^5.7.2",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.1.4",
+    "linq": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1"
+  }
+}
