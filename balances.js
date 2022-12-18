@@ -1,5 +1,5 @@
 "use strict";
-import BigNumber from "bignumber.js";
+import { BigNumber } from "ethers";
 import enumerable from "linq";
 
 export const createBalances = async (data) => {
