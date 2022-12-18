@@ -1,6 +1,6 @@
 {
   "name": "token-snapshot",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "ERC20 Token Snapshot, compatible with all EVM chains.",
   "main": "index.js",
   "type": "module",
@@ -30,7 +30,6 @@
     "url": "https://github.com/Pedrojok01/token-snapshot"
   },
   "dependencies": {
-    "bignumber.js": "^9.1.1",
     "csv-writer": "^1.6.0",
     "ethers": "^5.7.2",
     "fs": "^0.0.1-security",
