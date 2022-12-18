@@ -24,10 +24,10 @@
     "@Pedrojok01"
   ],
   "license": "Apache-2.0",
-  "homepage": "https://github.com/Pedrojok01/@token-snapshot",
+  "homepage": "https://github.com/Pedrojok01/token-snapshot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pedrojok01/@token-snapshot"
+    "url": "https://github.com/Pedrojok01/token-snapshot"
   },
   "dependencies": {
     "bignumber.js": "^9.1.1",

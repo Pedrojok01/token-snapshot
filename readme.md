@@ -4,7 +4,7 @@ This command-line utility creates a snapshot of any ERC20 token in JSON or CSV f
 
 - Works without a local Ethereum node.
 - Automatically resumes the next time upon failure.
-- Tested to work with Infura.
+- Tested to work with Infura / QuickNode / Alchemy.
 
 ## Important Notes
 
@@ -14,6 +14,7 @@ This package is based on the little outdated <b>erc20-snapshot</b> package. Here
 - Switched from <b>[web3](https://docs.web3js.org/)</b> to <b>[ethers](https://docs.ethers.org/v5/)</b>;
 - Switched to ES6 modules;
 - Added <b>prettier</b> in addition to <b>eslint</b>;
+- Group the snapshot output files into a `result` folder for clarity;
 
 ## Getting Started
 
