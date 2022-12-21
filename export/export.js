@@ -7,7 +7,7 @@ import { parameters } from "../config/parameters.js";
 import { ensureDirectory, writeFile } from "./file-helper.js";
 import { addType } from "./wallet-type.js";
 
-export const exportBalances = async (symbol, balances, format, config, provider) => {
+export const exportBalances = async (symbol, balances, config, provider) => {
   const withType = await addType(balances, config, provider);
 
   const writeCsv = () => {
@@ -27,10 +27,10 @@ export const exportBalances = async (symbol, balances, format, config, provider)
     writer.writeRecords(withType).then(() => console.log("CSV export done!"));
   };
 
-  if (["csv", "both"].indexOf(format.toLowerCase()) > -1) {
+  if (["csv", "both"].indexOf(config.format.toLowerCase()) > -1) {
     writeCsv();
 
-    if (format.toLowerCase() === "csv") {
+    if (config.format.toLowerCase() === "csv") {
       return;
     }
   }
