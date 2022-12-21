@@ -2,19 +2,13 @@
 
 import { promisify } from "util";
 
-import { ethers } from "ethers";
-
-import { getConfig } from "../config.js";
-import { contract } from "../contract.js";
-import { writeFile } from "../file-helper.js";
-import { parameters } from "../parameters.js";
+import { writeFile } from "../export/file-helper.js";
+import { parameters } from "../config/parameters.js";
 import { tryBlockByBlock } from "./block-by-block.js";
 import { getEvents } from "./block-reader.js";
 import { getFiles } from "./last-downloaded-block.js";
 
 const sleep = promisify(setTimeout);
-const config = getConfig();
-const web3 = new ethers.providers.JsonRpcProvider((config || {}).provider || "http://localhost:8545");
 
 const groupBy = (objectArray, property) => {
   return objectArray.reduce((acc, obj) => {
@@ -27,7 +21,7 @@ const groupBy = (objectArray, property) => {
   }, {});
 };
 
-const tryGetEvents = async (start, end, symbol) => {
+const tryGetEvents = async (start, end, symbol, contract) => {
   try {
     const filter = contract.filters.Transfer();
     const pastEvents = await contract.queryFilter(filter, start, end);
@@ -57,11 +51,11 @@ const tryGetEvents = async (start, end, symbol) => {
   }
 };
 
-export const getEventsData = async () => {
+export const getEventsData = async (config, provider, contract) => {
   const name = await contract.name();
   const symbol = await contract.symbol();
   const decimals = await contract.decimals();
-  const blockHeight = await web3.getBlockNumber();
+  const blockHeight = await provider.getBlockNumber();
   let fromBlock = parseInt(config.fromBlock) || 0;
   const blocksPerBatch = parseInt(config.blocksPerBatch) || 0;
   const delay = parseInt(config.delay) || 0;
@@ -89,7 +83,7 @@ export const getEventsData = async () => {
 
     console.log("Batch", i + 1, " From", start, "to", end);
 
-    await tryGetEvents(start, end, symbol);
+    await tryGetEvents(start, end, symbol, contract);
 
     start = end + 1;
     end = start + blocksPerBatch;

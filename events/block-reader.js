@@ -4,7 +4,7 @@ import { readdir, readFile } from "fs";
 import { join } from "path";
 import { promisify } from "util";
 
-import { parameters } from "../parameters.js";
+import { parameters } from "../config/parameters.js";
 
 const readdirAsync = promisify(readdir);
 const readFileAsync = promisify(readFile);
@@ -15,7 +15,7 @@ const getMinimal = (pastEvents) => {
       transactionHash: tx.transactionHash,
       from: tx.args["0"],
       to: tx.args["1"],
-      value: Number(tx.args["2"].hex).toString()
+      value: tx.args["2"].hex
     };
   });
 };

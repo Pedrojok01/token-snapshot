@@ -2,7 +2,7 @@
 
 import path from "path";
 
-import { abi } from "./abi.js";
+import { abi } from "../web3/abi.js";
 
 export const parameters = {
   abi: abi,

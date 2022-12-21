@@ -5,7 +5,7 @@ import { promisify } from "util";
 
 import Enumerable from "linq";
 
-import { parameters } from "../parameters.js";
+import { parameters } from "../config/parameters.js";
 const readdirAsync = promisify(readdir);
 const folderExistsAsync = promisify(exists);
 

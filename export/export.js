@@ -4,11 +4,11 @@ import path from "path";
 import { createObjectCsvWriter } from "csv-writer";
 
 import { ensureDirectory, writeFile } from "./file-helper.js";
-import { parameters } from "./parameters.js";
+import { parameters } from "../config/parameters.js";
 import { addType } from "./wallet-type.js";
 
-export const exportBalances = async (symbol, balances, format) => {
-  const withType = await addType(balances);
+export const exportBalances = async (symbol, balances, format, config, provider) => {
+  const withType = await addType(balances, config, provider);
 
   const writeCsv = () => {
     const file = parameters.outputFileNameCSV.replace(/{token}/, symbol);

@@ -9,11 +9,11 @@ export const createBalances = async (data) => {
   const setDeposits = (event) => {
     const wallet = event.to;
 
-    let deposits = (balances.get(wallet) || {}).deposits || new BigNumber(0);
-    const withdrawals = (balances.get(wallet) || {}).withdrawals || new BigNumber(0);
+    let deposits = (balances.get(wallet) || {}).deposits || BigNumber.from(0);
+    const withdrawals = (balances.get(wallet) || {}).withdrawals || BigNumber.from(0);
 
     if (event.value) {
-      deposits = deposits.plus(new BigNumber(event.value));
+      deposits = deposits.add(BigNumber.from(event.value));
       balances.set(wallet, { deposits, withdrawals });
     }
   };
@@ -21,11 +21,11 @@ export const createBalances = async (data) => {
   const setWithdrawals = (event) => {
     const wallet = event.from;
 
-    const deposits = (balances.get(wallet) || {}).deposits || new BigNumber(0);
-    let withdrawals = (balances.get(wallet) || {}).withdrawals || new BigNumber(0);
+    const deposits = (balances.get(wallet) || {}).deposits || BigNumber.from(0);
+    let withdrawals = (balances.get(wallet) || {}).withdrawals || BigNumber.from(0);
 
     if (event.value) {
-      withdrawals = withdrawals.plus(new BigNumber(event.value));
+      withdrawals = withdrawals.add(BigNumber.from(event.value));
       balances.set(wallet, { deposits, withdrawals });
     }
   };
@@ -40,11 +40,11 @@ export const createBalances = async (data) => {
       continue;
     }
 
-    const balance = value.deposits.minus(value.withdrawals);
+    const balance = value.deposits.sub(value.withdrawals);
     if (balance > 0) {
       closingBalances.push({
         wallet: key,
-        balance: balance.div(10 ** parseInt(data.decimals)).toFixed(18)
+        balance: (Number(balance) / 10 ** parseInt(data.decimals)).toFixed(parseInt(data.decimals)).toString()
       });
     }
   }

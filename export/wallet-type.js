@@ -1,11 +1,7 @@
-import { ethers } from "ethers";
 import Enumerable from "linq";
 
-import { getConfig } from "./config.js";
 import { parseFile, writeFile } from "./file-helper.js";
-import { parameters } from "./parameters.js";
-
-const web3 = new ethers.providers.JsonRpcProvider((getConfig() || {}).provider || "http://localhost:8545");
+import { parameters } from "../config/parameters.js";
 
 const findTypeFromCache = (cache, wallet) => {
   if (cache && cache.length) {
@@ -19,8 +15,8 @@ const findTypeFromCache = (cache, wallet) => {
   return null;
 };
 
-export const addType = async (balances) => {
-  if (getConfig().checkIfContract.toLowerCase() !== "yes") {
+export const addType = async (balances, config, provider) => {
+  if (config.checkIfContract.toLowerCase() !== "yes") {
     return balances;
   }
 
@@ -35,7 +31,7 @@ export const addType = async (balances) => {
     if (!type) {
       type = "wallet";
 
-      const code = await web3.getCode(balance.wallet);
+      const code = await provider.getCode(balance.wallet);
 
       if (code != "0x") {
         type = "contract";

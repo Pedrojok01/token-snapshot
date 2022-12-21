@@ -1,7 +1,7 @@
 "use strict";
 
-import { writeFile } from "../file-helper.js";
-import { parameters } from "../parameters.js";
+import { writeFile } from "../export/file-helper.js";
+import { parameters } from "../config/parameters.js";
 
 const range = (start, end) => {
   return Array(end - start + 1)

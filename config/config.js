@@ -23,7 +23,7 @@ export const checkConfig = async () => {
   process.exit();
 };
 
-export const getConfig = () => {
+const getConfig = () => {
   try {
     const contents = fs.readFileSync(parameters.configFileName);
     return JSON.parse(contents.toString());
@@ -31,3 +31,5 @@ export const getConfig = () => {
     console.error("No configuration file found.");
   }
 };
+
+export const config = getConfig();
