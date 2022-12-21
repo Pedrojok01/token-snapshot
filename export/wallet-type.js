@@ -1,7 +1,7 @@
 import Enumerable from "linq";
 
-import { parseFile, writeFile } from "./file-helper.js";
 import { parameters } from "../config/parameters.js";
+import { parseFile, writeFile } from "./file-helper.js";
 
 const findTypeFromCache = (cache, wallet) => {
   if (cache && cache.length) {

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 "use strict";
 
-import { createBalances } from "./export/balances.js";
 import { checkConfig, config } from "./config/config.js";
-import { provider, contract } from "./web3/contract.js";
 import { getEventsData } from "./events/blockchain.js";
+import { createBalances } from "./export/balances.js";
 import { exportBalances } from "./export/export.js";
+import { provider, contract } from "./web3/contract.js";
 
 const start = async () => {
   await checkConfig();

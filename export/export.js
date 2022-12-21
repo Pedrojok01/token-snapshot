@@ -3,8 +3,8 @@ import path from "path";
 
 import { createObjectCsvWriter } from "csv-writer";
 
-import { ensureDirectory, writeFile } from "./file-helper.js";
 import { parameters } from "../config/parameters.js";
+import { ensureDirectory, writeFile } from "./file-helper.js";
 import { addType } from "./wallet-type.js";
 
 export const exportBalances = async (symbol, balances, format, config, provider) => {

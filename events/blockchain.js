@@ -2,8 +2,8 @@
 
 import { promisify } from "util";
 
-import { writeFile } from "../export/file-helper.js";
 import { parameters } from "../config/parameters.js";
+import { writeFile } from "../export/file-helper.js";
 import { tryBlockByBlock } from "./block-by-block.js";
 import { getEvents } from "./block-reader.js";
 import { getFiles } from "./last-downloaded-block.js";

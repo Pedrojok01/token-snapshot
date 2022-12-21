@@ -1,6 +1,6 @@
 {
   "name": "token-snapshot",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "ERC20 Token Snapshot, compatible with all EVM chains.",
   "main": "index.js",
   "type": "module",
@@ -17,7 +17,9 @@
     "EVM networks",
     "erc20",
     "token",
-    "snapshot"
+    "snapshot",
+    "erc20-snapshot",
+    "token-snapshot"
   ],
   "author": "Binod Nirvan",
   "contributors": [
