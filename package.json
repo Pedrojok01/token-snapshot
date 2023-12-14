@@ -21,9 +21,9 @@
     "erc20-snapshot",
     "token-snapshot"
   ],
-  "author": "Binod Nirvan",
+  "author": "@Pedrojok01",
   "contributors": [
-    "@Pedrojok01"
+    "Binod Nirvan"
   ],
   "license": "Apache-2.0",
   "homepage": "https://github.com/Pedrojok01/token-snapshot",

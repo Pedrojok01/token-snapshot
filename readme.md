@@ -5,6 +5,7 @@
 [![Stargazers](https://img.shields.io/github/stars/Pedrojok01/token-snapshot)](https://github.com/Pedrojok01/token-snapshot/stargazers)
 [![Issues](https://img.shields.io/github/issues/Pedrojok01/token-snapshot)](https://github.com/Pedrojok01/token-snapshot/issues)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Downloads per month](https://img.shields.io/npm/dm/token-snapshot)](https://img.shields.io/npm/dm/token-snapshot)
 
 <br></br>
 
@@ -28,7 +29,7 @@ This package is based on the little outdated <b>erc20-snapshot</b> package. Here
 
 ## Getting Started
 
-```
+```shell
 npm install token-snapshot -g
 ```
 
@@ -40,13 +41,13 @@ None. Prompts for user input and produces a configuration file on the first run.
 
 Navigate to a directory where you'd like to save the token snapshot to.
 
-```
+```shell
 cd path/to/a/directory
 ```
 
 Run the program:
 
-```
+```shell
 snapshot
 ```
 

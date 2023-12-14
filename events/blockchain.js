@@ -33,7 +33,6 @@ const tryGetEvents = async (start, end, symbol, contract) => {
     const group = groupBy(pastEvents, "blockNumber");
 
     for (const key in group) {
-      // if (group.hasOwnProperty(key)) {
       if (Object.prototype.hasOwnProperty.call(group, key)) {
         const blockNumber = key;
         const data = group[key];
